@@ -102,6 +102,10 @@ A Python-based Turnstile solver using the patchright library, featuring multi-th
      ```bash
      python api_solver.py
      ```
+   - In Linux Container, bind --host 0.0.0.0 to make accessible from outside container
+     ```bash
+     python3 api_solver.py --browser_type camoufox --host 0.0.0.0
+     ```
      
 ---
 
