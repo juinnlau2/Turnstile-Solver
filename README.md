@@ -100,7 +100,7 @@ A Python-based Turnstile solver using the patchright library, featuring multi-th
 6. **Start testing**:
    - Run the script (Check [🔧 Command line arguments](#-command-line-arguments) for better setup):
      ```bash
-     python api_solver.py
+     python api_solver.py --browser_type chromium --debug true --proxy true
      ```
    - In Linux Container, bind --host 0.0.0.0 to make accessible from outside container
      ```bash

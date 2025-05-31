@@ -63,9 +63,9 @@ class TurnstileAPIServer:
         <script>
             async function fetchIP() {
                 try {
-                    const response = await fetch('https://api64.ipify.org?format=json');
-                    const data = await response.json();
-                    document.getElementById('ip-display').innerText = `Your IP: ${data.ip}`;
+                    const response = await fetch('https://checkip.amazonaws.com');
+                    const ip = (await response.text()).trim();
+                    document.getElementById('ip-display').innerText = `Your IP: ${ip}`;
                 } catch (error) {
                     console.error('Error fetching IP:', error);
                     document.getElementById('ip-display').innerText = 'Failed to fetch IP';
@@ -211,7 +211,7 @@ class TurnstileAPIServer:
             if self.debug:
                 logger.debug(f"Browser {index}: Starting Turnstile response retrieval loop")
 
-            for _ in range(10):
+            for _ in range(20):
                 try:
                     turnstile_check = await page.input_value("[name=cf-turnstile-response]", timeout=2000)
                     if turnstile_check == "":
